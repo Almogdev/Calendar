@@ -12,7 +12,8 @@ app.set("view engine", "ejs");
 app.set('views', path.join(__dirname,"./views"));
 
 app.get('/', (req, res) => {
-    res.status(200).sendFile(path.join(__dirname,"/views/mainPage.html"));
+    //res.status(200).sendFile(path.join(__dirname,"/views/mainPage.html"));
+    res.render("index",{})
 });
 
 app.listen(port, () => {
