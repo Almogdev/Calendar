@@ -8,7 +8,10 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
+app.get('/', (req, res) => {
+    res.status(200).sendFile(path.join(__dirname,"/views/mainPage.html"));
+});
 
 app.listen(port, () => {
-        console.log(`Listening on port: ${port}` );
+        console.log(`Listening on port: http://localhost:${port}`);
 });
